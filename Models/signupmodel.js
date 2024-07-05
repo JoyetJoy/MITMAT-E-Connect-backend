@@ -29,6 +29,14 @@ const schema={
         type:Boolean,
         default:false
     },
+    position:{
+        type:String,
+        default:''
+    },
+    certificateVerity:{
+        type:Boolean,
+        default:false
+    }
 }
 
 const signupSchema=new mongoose.Schema(schema)
