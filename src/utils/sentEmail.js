@@ -9,6 +9,7 @@ const emailorders = (email, otp) => {
     console.log(email);
     console.log(myEmail)
     console.log(myPass);
+    console.log(otp);
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {

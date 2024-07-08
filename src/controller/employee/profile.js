@@ -91,3 +91,15 @@ exports.updatePasswordPost = async (req, res) => {
       return res.status(500).json({ message: 'Server error', error: error.message });
     }
   };
+  exports.deleteAccount= async(req,res)=>{
+    try{
+      const id = req.query.id;
+      const employee = await signupModel.findOneAndDelete({ _id: id });
+      if (!employee) {
+        return res.status(404).json({ message: 'Employee not found!' });
+        }
+        return res.status(200).json({ message: 'Account deleted successfully!' });  
+    }catch(error){
+      return res.status(500).json({message: 'Server error',error:error.message})
+    }
+  }
